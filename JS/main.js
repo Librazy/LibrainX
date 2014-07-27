@@ -151,6 +151,7 @@ function setlev(arg) {
 	}catch(e){return false;}
 }
 $(document).ready(function () {
+	QueryString.Initial();
 	//set the levelpack begin
 	//*XTODO
 	$("#levpacktit").animate({
@@ -166,7 +167,11 @@ $(document).ready(function () {
 	$("#levtit").animate({
 		color: '#AAA',
 	}, 600);
-	levpackldr=$.getJSON("testlevpack.json");
+	var levpackaddr="levpack.json";
+	if(QueryString.GetValue('levpackaddr')!=null){
+		levpackaddr=QueryString.GetValue('levpackaddr');
+	}
+	levpackldr=$.getJSON(levpackaddr);
 	levpackldr.complete(loadlevpack);
 });
 $("#subchkans").click(function () {

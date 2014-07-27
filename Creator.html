@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Librains</title>
+	<script src="JS/jquery-2.1.0.min.js" type="text/javascript"></script>
+	<script src="JS/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+	<script src="JS/localObj.js" type="text/javascript"></script>
+	<script src="JS/jquery-color.js" type="text/javascript"></script>
+	<script src="JS/json2.js" type="text/javascript"></script>
+	<script src="JS/rollups/aes.js" type="text/javascript"></script>
+	<script src="JS/rollups/sha512.js" type="text/javascript"></script>
+    <script>
+        //via PuterJam http://www.pjhome.net/web/html5/encodeDataUrl.htm 
+        (function () {
+            var PJ = {};
+            var _DROP_AREA = null;
+            var _data_textareas = null;
+            var _data_previewareas = null;
+
+            PJ.init = function () {
+                _DROP_AREA = window;
+                _DROP_AREA.addEventListener("dragenter", PJ._dragenter, false);
+                _DROP_AREA.addEventListener("dragover", PJ._dragover, false);
+                _DROP_AREA.addEventListener("drop", PJ._drop, false);
+            };
+            PJ._dragenter = function (e) { e.stopPropagation(); e.preventDefault(); };
+            PJ._dragover = function (e) { e.stopPropagation(); e.preventDefault(); };
+            PJ._drop = function (e) { PJ.handleFiles(e); e.stopPropagation(); e.preventDefault(); };
+            PJ.handleFiles = function (e) {
+                var dt = e.dataTransfer;
+                var files = dt.files;
+                PJ.openFiles(files);
+            };
+            PJ.openFiles = function (/*@type {Files}*/files) {
+                for (var i = 0, l = files.length; i < l; i++) {
+                    PJ.readFile(files[i], i);
+                }
+            }
+            PJ.readFile = function (/*@type {File}*/ file,/*@type {int}*/ index) {
+                var reader = new FileReader();
+                reader.onload = function (/*@type {ProgressEvent}*/e) {
+                    var _result = e.target.result;
+                    $("#iptpencdata").val(_result);
+                };
+                reader.readAsDataURL(file);
+            };
+            window.addEventListener("load", PJ.init, false);
+        })();
+	</script>
+</head>
+<body>
+    <h1>Librains</h1>
+	<!--XTODO-->
+	关卡包名称<input type="text" id="iptlevpackname" value="" /><br />
+	关卡包ID<input type="text" id="iptlevpackID" value="" /><br />
+	关卡数量<input type="number" id="iptlevpacktot" value="0" /><br />
+	关卡包初始密码<input type="text" id="iptlevpackpass" value="LibrainX" /><br />	
+	<input type="button" id="sublevpackb" value="生成关卡包头" /><br />
+	<div id="formproblems">
+		关卡名称<input type="text" id="iptpname" value="" /><br />
+		关卡描述<input type="text" id="iptpdesc" value="" /><br />
+		关卡提示<input type="text" id="iptphint" value="" /><br />
+		关卡密码<input type="text" id="iptppass" value="" /><br />
+		本关类型<select id="iptptype">
+			<option value="enchtma">htmlA </option>
+			<option value="enchtmb">htmlB</option>
+			<option value="encimga">图片A</option>
+			<option value="encimgb">图片B</option>
+			<option value="hyba">混合A</option>
+			<option value="hybb">混合B</option>
+		</select><br />
+		上一关密码（解锁密码）<input type="text" id="iptpprevpass" value="LibrainX" /><br />
+		数据A<input type="text" id="iptpencdata" value="" /><br />
+		数据B<input type="text" id="iptpencdatb" value="" /><br />
+		数据C<input type="text" id="iptpencdatc" value="" /><br />
+		数据D<input type="text" id="iptpencdatd" value="" /><br />
+		<input type="hidden" id="genhash" value="" />
+		<input type="button" id="subqus" value="生成" /><br />
+		<input type="button" id="subnextqus" value="下一题" /><br />
+	</div>
+	<input type="button" id="sublevpacke" value="生成关卡包尾" /><br />
+    <textarea id="gjs"></textarea>
+<!--
+/*X
+*-levpack
+*|-levpackname 关卡包名称
+*|-levpacktot 关卡数
+*|-levpackloaded =true
+*|-problems 
+*|--pname 本关名称
+*|--pdesc 本关介绍
+*|--ptype-(enchtma,enchtmb,encimga,encimgb,hyba,hybb) 本关类型 加密htmlA 加密htmlB 加密图片A 加密图片B 混合A 混合B
+*|--pencdata 加密数据A
+*|--pencdatb 加密数据B
+*|--pencdatc 加密数据C
+*|--pencdatd 加密数据D
+*|--penchash 加密的密码hash
+*|--phint 本关提示
+*/
+-->
+    <script type="text/javascript">
+        $("#sublevpackb").click(function () {
+			$("#gjs").val("{\"levpackname\":\""+$("#iptlevpackname").val()+"\",\"levpackID\":\""+$("#iptlevpackID").val()+"\",\"levpackpass\":\""+$("#iptlevpackpass").val()+"\",\"levpacktot\":"+$("#iptlevpacktot").val()+",\"levpackloaded\":true,\"problems\":[");
+			$("#iptpprevpass").val($("#iptlevpackpass").val());
+        	$("#iptlevpacktot").val(0);
+			});
+		$("#subqus").click(function () {
+			var tmpmd5=CryptoJS.MD5($("#iptpprevpass").val()).toString();
+            $("#iptpname").val(
+                CryptoJS.AES.encrypt($("#iptpname").val(), tmpmd5).toString().replace(/\s/, "")
+               );
+			$("#iptpdesc").val(
+                CryptoJS.AES.encrypt($("#iptpdesc").val(), tmpmd5).toString().replace(/\s/, "")
+               );
+			$("#iptphint").val(
+                CryptoJS.AES.encrypt($("#iptphint").val(), tmpmd5).toString().replace(/\s/, "")
+               );
+			$("#iptpencdata").val(
+                CryptoJS.AES.encrypt($("#iptpencdata").val(), tmpmd5).toString().replace(/\s/, "")
+               );
+			$("#iptpencdatb").val(
+                CryptoJS.AES.encrypt($("#iptpencdatb").val(), tmpmd5).toString().replace(/\s/, "")
+               );
+			$("#iptpencdatc").val(
+                CryptoJS.AES.encrypt($("#iptpencdatc").val(), tmpmd5).toString().replace(/\s/, "")
+               );
+			$("#iptpencdatd").val(
+                CryptoJS.AES.encrypt($("#iptpencdatd").val(), tmpmd5).toString().replace(/\s/, "")
+               );
+			//!------hash(hash +hash(hash))-------!
+            var tmpshaf = CryptoJS.SHA512($("#iptppass").val()).toString();
+            $("#genhash").val(
+            CryptoJS.AES.encrypt(CryptoJS.SHA512(tmpshaf + CryptoJS.SHA512(tmpshaf)), $("#iptpprevpass").val()).toString().replace(/\s/, "")
+           );
+            $("#gjs").val($("#gjs").val()+"{\"pname\":\""+$("#iptpname").val()+"\",\"pdesc\":\""+$("#iptpdesc").val()+"\",\"ptype\":\""+$("#iptptype").val()+"\",\"pencdata\":\""+$("#iptpencdata").val()+"\",\"pencdatb\":\""+$("#iptpencdatb").val()+"\",\"pencdatc\":\""+$("#iptpencdatc").val()+"\",\"pencdatd\":\""+$("#iptpencdatd").val()+"\",\"penchash\":\""+$("#genhash").val()+"\",\"phint\":\""+$("#iptphint").val()+"\"}");
+		});
+        $("#subnextqus").click(function () {
+			$("#iptlevpacktot").val(parseInt($("#iptlevpacktot").val())+1);
+			$("#iptpprevpass").val($("#iptppass").val());
+			$("#iptppass").val("");
+			$("#iptpname").val("");
+			$("#iptpdesc").val("");
+			$("#iptpencdata").val("");
+			$("#iptpencdatb").val("");
+			$("#iptpencdatc").val("");
+			$("#iptpencdatd").val("");
+			$("#iptphint").val("");
+			$("#genhash").val("");
+			$("#gjs").val($("#gjs").val()+",");
+        });
+		$("#sublevpacke").click(function () {
+			$("#gjs").val($("#gjs").val()+"]}");
+		});
+    </script>
+</body>
+</html>

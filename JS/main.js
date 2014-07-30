@@ -1,7 +1,6 @@
 ﻿var levsaved = localObj("levsaved"+"LibrainX");
 var enterkeyreqbind = false;
 var lastpass="";
-var levpack;
 var levpackldr;
 var passed=false;
 var currentlev=0;
@@ -88,13 +87,15 @@ function loadfailed() {
 	$("#levdesc").text("我们中出了一个叛徒");
 }
 function loadlevpack() {
-	if(levpackldr.status!=200){
+	if((!loclevpack)&&levpackldr.status!=200){
 		loadfailed();
 		return 1;
 	}
 	try{
-		levpack=levpackldr.responseJSON;
+		/**/console.log("loadinglevpack");/**/
+		if(!loclevpack)levpack=levpackldr.responseJSON;
 		if (!levpack.levpackloaded){
+			/**/console.log("levpacknotloaded");/**/
 			loadfailed();
 		}else{
 			levsaved = localObj("levsaved"+levpack.levpackID);
@@ -111,9 +112,7 @@ function loadlevpack() {
 						$("#iptans").text("");
 						/**/console.log("readingstate2");/**/
 						currentlev += 1;
-						//set the question begin
 						setproblem(currentlev);
-						//set the question end
 					} else {
 						/**/console.log("clr");/**/
 						levsaved.clear().save();
@@ -152,7 +151,6 @@ function setlev(arg) {
 }
 $(document).ready(function () {
 	QueryString.Initial();
-	//set the levelpack begin
 	//*XTODO
 	$("#levpacktit").animate({
 		color: '#AAD',
@@ -167,15 +165,16 @@ $(document).ready(function () {
 	$("#levtit").animate({
 		color: '#AAA',
 	}, 600);
-	var levpackaddr="levpack.json";
-	if(QueryString.GetValue('levpackaddr')!=null){
-		levpackaddr=QueryString.GetValue('levpackaddr');
+	if(loclevpack){loadlevpack();}else{
+		var levpackaddr="levpack.json";
+		if(QueryString.GetValue('levpackaddr')!=null){
+			levpackaddr=QueryString.GetValue('levpackaddr');
+		}
+		levpackldr=$.getJSON(levpackaddr);
+		levpackldr.complete(loadlevpack);
 	}
-	levpackldr=$.getJSON(levpackaddr);
-	levpackldr.complete(loadlevpack);
 });
 $("#subchkans").click(function () {
-    //提交
     /**/console.log("submited");/**/
     var anssubed = $("#iptans").val().toString().trim().replace(".", "");
 	$.get("log.txt", { "levelnow": currentlev,"ans": anssubed, "levpack": levpack.levpackID});
@@ -192,10 +191,7 @@ $("#subchkans").click(function () {
 			levsaved.set('levpass' + (currentlev).toString(), lastpass).save();
         } else {
             currentlev += 1;
-			//set the question begin
 			setproblem(currentlev);
-			//set the question end
-			//set the storage begin
 			window.localStorage.setItem('nvisbefore'+levpack.levpackID, true);
 			if (currentlev != 1) {
 				levsaved.set('nprevpass', levsaved.get("nlastpass"));
@@ -205,7 +201,6 @@ $("#subchkans").click(function () {
 			levsaved.set('nlastpass', lastpass);
 			levsaved.set('nlastlev', currentlev-1);
 			levsaved.set('levpass' + (currentlev-1).toString(), lastpass).save();
-			//set the storage end
 			/**/console.log("savingstate");/**/
 			$("#iptans").val("");//清除文字
 			$("#iptans").text("");

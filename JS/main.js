@@ -42,6 +42,42 @@ function test(passwd, prevpass, levreq) {
 		return false;
 	}
 }
+function enchtma(levreq,tmpmd5){
+	/**/console.log("htma");/**/
+	var p=levpack.problems;
+	$("#divqusa").text(dec(tmpmd5,p[levreq].pencdata));
+	$("#divqusb").text(dec(tmpmd5,p[levreq].pencdatb));
+}
+function enchtmb(levreq,tmpmd5){
+	/**/console.log("htmb");/**/
+	var p=levpack.problems;
+	$("#divqusa").html(dec(tmpmd5,p[levreq].pencdata));
+	$("#divqusb").html(dec(tmpmd5,p[levreq].pencdatb));
+}
+function encimga(levreq,tmpmd5){
+	/**/console.log("imga");/**/
+	var p=levpack.problems;
+	$("#divqusa").html("<img src=\""+dec(tmpmd5,p[levreq].pencdata)+"\" alt=\""+dec(tmpmd5,p[levreq].pencdatb)+"\"/>");
+	if(dec(tmpmd5,p[levreq].pencdatc)!="")$("#divqusb").html('<img src="'+dec(tmpmd5,p[levreq].pencdatc)+'" alt="'+dec(tmpmd5,p[levreq].pencdatd)>+'"/>');
+}
+function encimgb(levreq,tmpmd5){
+	/**/console.log("imgb");/**/
+	var p=levpack.problems;
+	$("#divqusa").html('<figure> <figcaption>'+dec(tmpmd5,p[levreq].pencdatc)+'</figcaption><img src="'+dec(tmpmd5,p[levreq].pencdata)+'" alt="'+dec(tmpmd5,p[levreq].pencdatb)+'"/></figure>');
+}
+function hyba(levreq,tmpmd5){
+	/**/console.log("hyba");/**/
+	var p=levpack.problems;
+	$("#divqusa").html('<img src="'+dec(tmpmd5,p[levreq].pencdata)+'" alt="'+dec(tmpmd5,p[levreq].pencdatb)+'"/>');
+	$("#divqusb").html(dec(tmpmd5,p[levreq].pencdatc));
+	if(dec(tmpmd5,p[levreq].pencdatd)!="")eval(dec(tmpmd5,p[levreq].pencdatd));
+}
+function hybb(levreq,tmpmd5){
+	/**/console.log("hybb");/**/
+	var p=levpack.problems;
+	$("#divqusa").html('<figure> <figcaption>'+dec(tmpmd5,p[levreq].pencdatc)+'</figcaption><img src="'+dec(tmpmd5,p[levreq].pencdata)+'" alt="'+dec(tmpmd5,p[levreq].pencdatb)+'"/></figure>');
+	if(dec(tmpmd5,p[levreq].pencdatd)!="")eval(dec(tmpmd5,p[levreq].pencdatd));
+}
 function setproblem(levreq) {
 	//*XTODO*//
 	var p=levpack.problems;
@@ -56,6 +92,15 @@ function setproblem(levreq) {
 	$("#levtit").text(dec(tmpmd5,p[levreq].pname));
 	$("#levdesc").text(dec(tmpmd5,p[levreq].pdesc));
 	$("#levhint").text(dec(tmpmd5,p[levreq].phint));
+	switch(p[levreq].ptype){
+		case "enchtma":enchtma(levreq,tmpmd5);break;
+		case "enchtmb":enchtmb(levreq,tmpmd5);break;
+		case "encimga":encimga(levreq,tmpmd5);break;
+		case "encimgb":encimgb(levreq,tmpmd5);break;
+		case "hyba":hyba(levreq,tmpmd5);break;
+		case "hybb":hybb(levreq,tmpmd5);break;
+		default :break;
+	}	
 }
 function clearlev() {
     levsaved.remove('nprevpass').remove("nlastpass").remove('nlastlev').save();

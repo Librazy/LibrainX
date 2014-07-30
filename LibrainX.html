@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id="doctitle">
+			LibrainX
+		</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="keywords" content="LibrainX" />
+		<meta name="description" content="LibrainX是由Librazy也就是我（目前）独立开发的的开源网页解谜游戏框架"/>
+		<meta name="msapplication-TileColor" content="#0b1f47" />
+		<meta name="msapplication-TileImage" content="CSS/icon_256.png" />
+		<meta name="author" content="Librazy,赖博阳" />
+		<link href="CSS/intro.css" type="text/css" rel="stylesheet" />
+		<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/3.0/cn/"/>
+		<script src="JS/jquery-2.1.1.min.js" type="text/javascript"></script>
+		<!--Librazy@librazy.org-->
+	</head>
+	<body>
+		<div class="lay_wrap" id="body-content">
+			<div id="primary">
+				<div>
+					<!--Header Begin-->
+					<header id="header">
+						<div id="divtit">
+							<a href="http://im.librazy.org/article/179/librains-demo/" target="_blank"
+							rel="help" style="display: inline">
+								<h1 id="h1n">
+									LibrainX
+								</h1>
+							</a>
+							<h2 id="levtit">
+							关卡包选择
+							</h2>
+							<h2 id="levpacktit">
+							Librazy
+							</h2>
+							<h2 id="levcurrent">
+							-1
+							</h2>
+						</div>
+						<div>
+							<div id="levdesc">
+							选择要加载的关卡包
+							</div>
+						</div>
+					</header>
+					<!--Header End-->
+				</div>
+				<div>
+					<!--Con Begin-->
+					<div id="con">
+					<br />
+						<div id="divqus">
+							<input class="levpackcho" id="chochallenge" type="button" value="关卡包名称"/>
+							<input class="levpackcho" id="chochallenge2" type="button" value="关卡包名称2"/>
+							<input class="levpackcho" id="chocreator" type="button" value="创建关卡包"/>
+							<input class="levpackipt" id="iptlevpackaddr" type="text" value=""/>
+							<input class="levpackcho" id="sublevpackaddr" type="button" value="进入关卡包"/>
+						</div>
+					</div>
+					<!--Con End-->
+				</div>
+			</div>
+			<script type="text/javascript">
+var div = document.createElement('div');
+div.innerHTML = '<a href="./"></a>';
+var abspath=div.firstChild.href;
+$("#chochallenge").click(function () {
+    window.location.href = abspath+"Challenge.html?levpackaddr=testlevpack.json";
+});
+$("#chochallenge2").click(function () {
+    window.location.href = abspath+"Challenge.html?levpackaddr=test2levpack.json";
+});
+$("#chocreator").click(function () {
+    window.location.href = abspath+"Creator.html";
+});
+$("#sublevpackaddr").click(function () {
+    window.location.href = abspath+"Challenge.html?levpackaddr="+$("#iptlevpackaddr").val();
+});
+			</script>
+	</body>
+</html>

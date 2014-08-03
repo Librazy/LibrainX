@@ -53,10 +53,10 @@
 					<div id="con">
 					<br />
 						<div id="divqus">
-							<input class="levpackcho" id="chochallenge" type="button" value="关卡包名称"/>
-							<input class="levpackcho" id="chochallenge2" type="button" value="关卡包名称2"/>
+							<input class="levpackcho" id="chochallenge" type="button" value="LevPackDemo"/>
+							<input class="levpackcho" id="chochallenge2" type="button" value="全尺寸关卡包Demo"/>
 							<input class="levpackcho" id="chocreator" type="button" value="创建关卡包"/>
-							<input class="levpackipt" id="iptlevpackaddr" type="text" value=""/>
+							<input class="levpackipt" id="iptlevpackaddr" type="text" value="" placeholder="关卡包URL，要求同域名"/>
 							<input class="levpackcho" id="sublevpackaddr" type="button" value="进入关卡包"/>
 						</div>
 					</div>
@@ -71,7 +71,7 @@ $("#chochallenge").click(function () {
     window.location.href = abspath+"Challenge.html?levpackaddr=testlevpack.json";
 });
 $("#chochallenge2").click(function () {
-    window.location.href = abspath+"Challenge.html?levpackaddr=test2levpack.json";
+    window.location.href = abspath+"Challenge.html?levpackaddr=systemtest.json";
 });
 $("#chocreator").click(function () {
     window.location.href = abspath+"Creator.html";

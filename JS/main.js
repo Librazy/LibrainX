@@ -58,7 +58,7 @@ function encimga(levreq,tmpmd5){
 	/**/console.log("imga");/**/
 	var p=levpack.problems;
 	$("#divqusa").html("<img src=\""+dec(tmpmd5,p[levreq].pencdata)+"\" alt=\""+dec(tmpmd5,p[levreq].pencdatb)+"\"/>");
-	if(dec(tmpmd5,p[levreq].pencdatc)!="")$("#divqusb").html('<img src="'+dec(tmpmd5,p[levreq].pencdatc)+'" alt="'+dec(tmpmd5,p[levreq].pencdatd)>+'"/>');
+	if(dec(tmpmd5,p[levreq].pencdatc)!=""){console.log("imga2");$("#divqusb").html("<img src=\""+dec(tmpmd5,p[levreq].pencdatc)+"\" alt=\""+dec(tmpmd5,p[levreq].pencdatd)+"\"/>");}
 }
 function encimgb(levreq,tmpmd5){
 	/**/console.log("imgb");/**/
@@ -70,13 +70,13 @@ function hyba(levreq,tmpmd5){
 	var p=levpack.problems;
 	$("#divqusa").html('<img src="'+dec(tmpmd5,p[levreq].pencdata)+'" alt="'+dec(tmpmd5,p[levreq].pencdatb)+'"/>');
 	$("#divqusb").html(dec(tmpmd5,p[levreq].pencdatc));
-	if(dec(tmpmd5,p[levreq].pencdatd)!="")eval(dec(tmpmd5,p[levreq].pencdatd));
+	try{if(dec(tmpmd5,p[levreq].pencdatd)!="")eval(dec(tmpmd5,p[levreq].pencdatd));}catch(e){}
 }
 function hybb(levreq,tmpmd5){
 	/**/console.log("hybb");/**/
 	var p=levpack.problems;
 	$("#divqusa").html('<figure> <figcaption>'+dec(tmpmd5,p[levreq].pencdatc)+'</figcaption><img src="'+dec(tmpmd5,p[levreq].pencdata)+'" alt="'+dec(tmpmd5,p[levreq].pencdatb)+'"/></figure>');
-	if(dec(tmpmd5,p[levreq].pencdatd)!="")eval(dec(tmpmd5,p[levreq].pencdatd));
+	try{if(dec(tmpmd5,p[levreq].pencdatd)!="")eval(dec(tmpmd5,p[levreq].pencdatd));}catch(e){}
 }
 function setproblem(levreq) {
 	//*XTODO*//
@@ -109,11 +109,18 @@ function clearlev() {
 function levpackpassed() {
 	$("#levpacktit").animate({
 		backgroundColor: '#0c72a9',
-	}, 200);
+	}, 300);
 	$("#levpacktit").animate({
 		backgroundColor: 'green',
 	}, 500);
 	$("#levpacktit").animate({
+		backgroundColor: '#464646',
+	}, 3500);
+
+	$("#divqus").animate({
+		backgroundColor: '#46AA46',
+	}, 500);
+	$("#divqus").animate({
 		backgroundColor: '#464646',
 	}, 2500);
 }

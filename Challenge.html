@@ -33,74 +33,71 @@
 	<body>
 		<div class="lay_wrap" id="body-content">
 			<div id="primary">
-					<div>
-						<!--Header Begin-->
-						<header id="header">
-							<div id="divtit">
-								<a href="http://im.librazy.org/article/179/librains-demo/" target="_blank"
-								rel="help" style="display: inline">
-									<h1 id="h1n">
-										LibrainX
-									</h1>
-								</a>
-								<h2 id="levtit">
-								Loading
-								</h2>
-								<h2 id="levpacktit">
-								Loading
-								</h2>
-								<h2 id="levcurrent">
-								-1
-								</h2>
-							</div>
-							<div>
-								<div id="levdesc">
-								Loading
-								</div>
-								<input type="button" id="tools" />
-							</div>
-						</header>
-						<!--Header End-->
+				<!--Header Begin-->
+				<header id="header">
+					<div id="divtit">
+						<a href="http://im.librazy.org/article/179/librains-demo/" target="_blank"
+						rel="help" style="display: inline">
+							<h1 id="h1n">
+								LibrainX
+							</h1>
+						</a>
+						<a href="LibrainX.html" target="_self"
+						rel="help" style="display: inline">←</a>
+						<h2 id="levtit">
+						Loading
+						</h2>
+						<h2 id="levpacktit">
+						Loading
+						</h2>
+						<h2 id="levcurrent">
+						-1
+						</h2>
 					</div>
 					<div>
-						<!--Con Begin-->
-						<div id="con">
-						<br />
-							<div id="divqus">
-								<div id="divqusa">
-								Loading
-								</div>
-								<div id="divqusb">
-								</div>
-							</div>
-							<br />
-							<div id="divans">
-								<div>
-									<input type="text" id="iptans" placeholder="Is it?" class="clearfix"
-									/>
-									<input type="button" id="subchkans" />
-								</div>
-							</div>
-							<div id="divtools">
-								<div id="divhint">本关提示：<span id="levhint">WTF<span>
-								</div>
-								答案目前为全英文或数字，没有空格，区分大小写，但仅在题目包含了答案的情况下才有大写。只能前往你已经达到的关卡。
-								<br />
-								<span>
-								<input type="button" value="重置关卡进度" title="重置关卡进度" id="subclear" />
-								<input type="checkbox" title="清除关卡历史" id="ifclearall" />
-								清除关卡历史 &nbsp;&nbsp;&nbsp;&nbsp;
-								</span>
-								<span>
-								<input type="number" id="levreq" class="clearfix" min="0"/>
-								<input type="button" id="sublevreq" title="前往关卡" value="前往关卡" />
-								</span>
-							</div>
+						<div id="levdesc">
+						Loading
 						</div>
-						<!--Con End-->
+						<input type="button" id="tools" />
 					</div>
+				</header>
+				<!--Header End-->
+				<!--Con Begin-->
+				<div id="con">
+				<br />
+					<div id="divqus">
+						<div id="divqusa">
+						Loading
+						</div>
+						<div id="divqusb"></div>
+					</div>
+					<br />
+					<div id="divans">
+						<div>
+							<input type="text" id="iptans" placeholder="Is it?" class="clearfix"/>
+							<input type="button" id="subchkans" />
+						</div>
+					</div>
+					<div id="divtools">
+						<p id="divhint">本关提示：
+						<span id="levhint">WTF</span>
+						</p>
+						答案目前为全英文或数字，没有空格，区分大小写，但仅在题目包含了答案的情况下才有大写。只能前往你已经达到的关卡。
+						<br />
+						<span>
+						<input type="button" value="重置关卡进度" title="重置关卡进度" id="subclear" />
+						<input type="checkbox" title="清除关卡历史" id="ifclearall" />
+						清除关卡历史 &nbsp;&nbsp;&nbsp;&nbsp;
+						</span>
+						<span>
+						<input type="number" id="levreq" class="clearfix" min="0"/>
+						<input type="button" id="sublevreq" title="前往关卡" value="前往关卡" />
+						</span>
+					</div>
+				</div>
+				<!--Con End-->
 			</div>
-			<script type="text/javascript" src="JS/main.js">
-			</script>
+		</div>
+		<script type="text/javascript" src="JS/main.js"></script>
 	</body>
 </html>

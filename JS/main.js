@@ -58,7 +58,7 @@ function encimga(levreq,tmpmd5){
 	/**/console.log("imga");/**/
 	var p=levpack.problems;
 	$("#divqusa").html("<img src=\""+dec(tmpmd5,p[levreq].pencdata)+"\" alt=\""+dec(tmpmd5,p[levreq].pencdatb)+"\"/>");
-	if(dec(tmpmd5,p[levreq].pencdatc)!=""){console.log("imga2");$("#divqusb").html("<img src=\""+dec(tmpmd5,p[levreq].pencdatc)+"\" alt=\""+dec(tmpmd5,p[levreq].pencdatd)+"\"/>");}
+	if(dec(tmpmd5,p[levreq].pencdatc)!="")$("#divqusb").html("<img src=\""+dec(tmpmd5,p[levreq].pencdatc)+"\" alt=\""+dec(tmpmd5,p[levreq].pencdatd)+"\"/>");
 }
 function encimgb(levreq,tmpmd5){
 	/**/console.log("imgb");/**/

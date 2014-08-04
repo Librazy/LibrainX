@@ -32,7 +32,7 @@ body {
 ::-webkit-scrollbar-thumb{ background:#33B5E5; width:10px }
 ::-webkit-scrollbar-thumb:hover{ background:#909090 }
 
-a{ color:#EEE; font-size:16px;text-decoration: none;}
+a{ color:#CCF;text-decoration: none;}
 .formdiv{
 	background-color:rgba(99,99,99, .3);
 	width:70%;
@@ -56,11 +56,18 @@ a{ color:#EEE; font-size:16px;text-decoration: none;}
 	font-weight:bold;
     color: #fff;
     font-size: 32px;
-	border-left:2px solid #33B5E5;
-	border-bottom:2px solid #33B5E5;
+	border-left:3px solid #33B5E5;
+	display:inline;	
+}
+#header {
 	border-right:1px solid #33B5E5;
-	border-radius: 0 5px 0 0;
-	width:70%;
+	border-bottom:2px solid #33B5E5;
+    border-radius: 5px 5px 0 0;
+}
+#levtit {
+	font-weight:bold;
+    font-size: 22px;
+	display:inline;	
 }
 .half,.all{
 	border-left:2px solid #33B5E5;

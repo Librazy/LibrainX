@@ -49,40 +49,42 @@
         })();
 	</script>
 </head>
-<body>
-    <h1>LibrainX关卡包生成器</h1>
+<body class="lay_wrap" id="body-content">
+    <h1 id="h1n">LibrainX关卡包生成器</h1>
 	<!--XTODO-->
 	<div id="formlevpack" class="formdiv">
-		关卡包名称<input type="text" id="iptlevpackname" value="" /><br />
-		关卡包ID<input type="text" id="iptlevpackID" value="" /><br />
-		关卡数量<input type="number" id="iptlevpacktot" value="0" /><br />
-		关卡包初始密码<input type="text" id="iptlevpackpass" value="LibrainX" /><br />	
+		<span class="half halfl">关卡包名称<input type="text" id="iptlevpackname" value="" placeholder="关卡包名称" /></span>
+		<span class="half halfr">关卡包ID<input type="text" id="iptlevpackID" value="" placeholder="关卡包ID" /></span><br />
+		<span class="half halfl">关卡数量<input type="number" id="iptlevpacktot" value="0" /></span>
+		<span class="half halfr">关卡包初始密码<input type="text" id="iptlevpackpass" value="LibrainX" /></span><br />	
 		<input type="button" id="sublevpackb" value="生成关卡包头" /><br />
 	</div>
 	<div id="formproblems" class="formdiv">
-		关卡名称<input type="text" id="iptpname" value="" /><br />
-		关卡描述<input type="text" id="iptpdesc" value="" /><br />
-		关卡提示<input type="text" id="iptphint" value="" /><br />
-		关卡密码<input type="text" id="iptppass" value="" /><br />
-		本关类型<select id="iptptype">
+		<span class="all alll">关卡名称<input type="text" id="iptpname" value="" placeholder="关卡名称" /></span><br />
+		<span class="all alll">关卡描述<input type="text" id="iptpdesc" value="" placeholder="关卡描述" /></span><br />
+		<span class="all alll">关卡提示<input type="text" id="iptphint" value="" placeholder="关卡提示" /></span><br />
+		<span class="all alll">关卡密码<input type="text" id="iptppass" value="" placeholder="关卡密码" /></span><br />
+		<span class="half halfl">本关类型<select id="iptptype">
 			<option value="enchtma">htmlA </option>
 			<option value="enchtmb">htmlB</option>
 			<option value="encimga">图片A</option>
 			<option value="encimgb">图片B</option>
 			<option value="hyba">混合A</option>
 			<option value="hybb">混合B</option>
-		</select><br />
-		上一关密码（解锁密码）<input type="text" id="iptpprevpass" value="LibrainX" /><br />
-		数据A<input type="text" id="iptpencdata" value="" /><br />
-		数据B<input type="text" id="iptpencdatb" value="" /><br />
-		数据C<input type="text" id="iptpencdatc" value="" /><br />
-		数据D<input type="text" id="iptpencdatd" value="" /><br />
+		</select></span>
+		<span class="half halfr">上一关密码<input type="text" id="iptpprevpass" value="LibrainX" /></span><br />
+		<span class="all alll">数据A<input type="text" id="iptpencdata" value="" placeholder="数据A" /></span><br />
+		<span class="all alll">数据B<input type="text" id="iptpencdatb" value="" placeholder="数据B" /></span><br />
+		<span class="all alll">数据C<input type="text" id="iptpencdatc" value="" placeholder="数据C" /></span><br />
+		<span class="all alll">数据D<input type="text" id="iptpencdatd" value="" placeholder="数据D" /></span><br />
 		<input type="hidden" id="genhash" value="" />
 		<input type="button" id="subqus" value="生成" /><br />
 		<input type="button" id="subnextqus" value="下一题" /><br />
 	</div>
-	<input type="button" id="sublevpacke" value="生成关卡包尾" /><br />
-    <textarea id="gjs"></textarea>
+	<div id="formgen" class="formdiv">
+		<input type="button" id="sublevpacke" value="生成关卡包尾" /><br />
+		<textarea id="gjs" readonly="readonly" wrap="soft" spellcheck="false" placeholder="复制本文本框中的数据到json文件中"></textarea>
+	</div>
 <!--
 /*X
 *-levpack

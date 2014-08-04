@@ -34,13 +34,72 @@ body {
 
 a{ color:#EEE; font-size:16px;text-decoration: none;}
 .formdiv{
+	background-color:rgba(99,99,99, .3);
+	width:70%;
+	border-bottom:2px solid #33B5E5;
+}
+.formdiv>input{
+	width:90%;
+	cursor:pointer;
+	display:inline-block;
+	background-color:#464646;
+	border:none;
+	border-right:1px solid #33B5E5;
+	border-bottom:1px solid #33B5E5;
+    border-radius: 5px 5px 0 0;
+	height:22px;
+	margin:10px 5px;
+	color:#CCC;
+	font:bold 16px "Microsoft YaHei","微软雅黑","Lucida Grande","文泉驿等宽微米黑","文泉驿微米黑","WenQuanYiMicroHei";
+}
+#h1n {
+	font-weight:bold;
+    color: #fff;
+    font-size: 32px;
+	border-left:2px solid #33B5E5;
+	border-bottom:2px solid #33B5E5;
+	border-right:1px solid #33B5E5;
+	border-radius: 0 5px 0 0;
 	width:70%;
 }
-.formdiv>input,.formdiv>select{
-	width:70%;
+.half,.all{
+	border-left:2px solid #33B5E5;
+}
+
+.all>input{
+	width:80.6%;
 	float:right;
+	margin-right:.6%;
+}
+.half>input,.half>select{
+	width:60%;
+	float:right;
+	margin-right:3%;
+}
+.halfl{
+	float:left;
+	width:49%;
+}
+.halfr{
+	float:right;
+	width:49%;
+}
+.all{
+	width:99%;
+}
+.alll{
+	float:left;
 }
 #gjs{
-	width:70%;
+	margin:10px 5px;
+	width:90%;
 	height:300px;
+}
+@media (max-width: 1216px){
+	#body-content{width:92% !important;}
+	#primary {
+		width: 92%;
+		margin-left: 0px;
+	}
+
 }

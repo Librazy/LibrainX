@@ -35,7 +35,8 @@ body {
 a{ color:#CCF;text-decoration: none;}
 .formdiv{
 	background-color:rgba(99,99,99, .3);
-	width:70%;
+	width:85%;
+	max-width:1000px;
 	border-bottom:2px solid #33B5E5;
 }
 .formdiv>input{
@@ -106,7 +107,14 @@ a{ color:#CCF;text-decoration: none;}
 	#body-content{width:92% !important;}
 	#primary {
 		width: 92%;
-		margin-left: 0px;
+		margin-left: 5px;
 	}
-
+}
+@media (max-width: 890px){
+	#primary {
+		margin-left: 10px;
+	}
+	.formdiv span{
+		font-size: 14px;
+	}
 }

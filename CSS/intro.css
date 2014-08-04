@@ -33,7 +33,6 @@ body {
 ::-webkit-scrollbar-thumb:hover{ background:#909090 }
 
 a{ color:#CCF; font-size:16px;text-decoration: none;}
-
 input.levpackcho{
 	cursor:pointer;
 	display:inline-block;
@@ -49,9 +48,11 @@ input.levpackcho{
 	font:bold 18px "Microsoft YaHei","微软雅黑","Lucida Grande","文泉驿等宽微米黑","文泉驿微米黑","WenQuanYiMicroHei";
 }
 input.levpackipt{
+	border-top: none;
+	border-left: none;
 	border-right:1px solid #33B5E5;
 	border-bottom:1px solid #33B5E5;
-    border-radius: 5px 5px 0 0;
+    border-radius: 0px 5px 0 0;
 	width:60%;
 	height:20px;
 	margin:10px 10px;
@@ -106,7 +107,7 @@ input.levpackipt{
 #header {
 	border-right:1px solid #33B5E5;
 	border-bottom:2px solid #33B5E5;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px 9px 0 0;
 }
 
 #divtit{

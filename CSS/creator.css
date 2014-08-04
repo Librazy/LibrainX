@@ -22,11 +22,11 @@ body {
 	font:16px/1.6333 "Microsoft YaHei","微软雅黑","Lucida Grande","文泉驿等宽微米黑","文泉驿微米黑","WenQuanYiMicroHei";
 	font-weight:400;
 	letter-spacing:.1px;
+	box-sizing: border-box; padding-left: 6px; padding-right: 6px;
 }
 
 .lay_wrap{ max-width:1200px; clear:both; }
-#body-content{ width:1200px; margin:0 auto; }
-#primary{  width:92%; margin-left:3%; padding-top:15px; }
+#body-content{ width:1200px; margin:0 auto;padding-top:15px;  }
 ::-webkit-scrollbar{ height:10px;width:10px; margin-right:2px }
 ::-webkit-scrollbar-track-piece{background-color:#F5F5F5;border-left:1px solid #D2D2D2;}
 ::-webkit-scrollbar-thumb{ background:#33B5E5; width:10px }
@@ -48,8 +48,8 @@ a{ color:#CCF;text-decoration: none;}
 	border-right:1px solid #33B5E5;
 	border-bottom:1px solid #33B5E5;
     border-radius: 5px 5px 0 0;
-	height:22px;
-	margin:10px 5px;
+	height:26px;
+	margin:6px 4px;
 	color:#CCC;
 	font:bold 16px "Microsoft YaHei","微软雅黑","Lucida Grande","文泉驿等宽微米黑","文泉驿微米黑","WenQuanYiMicroHei";
 }
@@ -63,7 +63,7 @@ a{ color:#CCF;text-decoration: none;}
 #header {
 	border-right:1px solid #33B5E5;
 	border-bottom:2px solid #33B5E5;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px 9px 0 0;
 }
 #levtit {
 	font-weight:bold;
@@ -72,6 +72,9 @@ a{ color:#CCF;text-decoration: none;}
 }
 .half,.all{
 	border-left:2px solid #33B5E5;
+	padding-left: 1%;
+	padding-top: 3px;
+	overflow: hidden;
 }
 
 .all>input{
@@ -86,14 +89,14 @@ a{ color:#CCF;text-decoration: none;}
 }
 .halfl{
 	float:left;
-	width:49%;
+	width:48%;
 }
 .halfr{
 	float:right;
-	width:49%;
+	width:48%;
 }
 .all{
-	width:99%;
+	width:98%;
 }
 .alll{
 	float:left;
@@ -116,5 +119,13 @@ a{ color:#CCF;text-decoration: none;}
 	}
 	.formdiv span{
 		font-size: 14px;
+	}
+	.half>input,.half>select{
+		width:60%;
+		float:right;
+		margin-right:auto;
+	}
+	.all>input{
+		margin-right:auto;
 	}
 }

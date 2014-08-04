@@ -15,6 +15,7 @@ table, caption, tbody, tfoot, thead, tr, th, td{
 	outline:0;
 	padding:0;
 	vertical-align:baseline;
+	
 }
 body {
 	background:#464646;
@@ -22,6 +23,7 @@ body {
 	font:16px/1.6333 "Microsoft YaHei","微软雅黑","Lucida Grande","文泉驿等宽微米黑","文泉驿微米黑","WenQuanYiMicroHei";
 	font-weight:400;
 	letter-spacing:.1px;
+	box-sizing: border-box; padding-left: 6px; padding-right: 6px;
 }
 
 .lay_wrap{ max-width:1200px; clear:both; }
@@ -33,7 +35,6 @@ body {
 ::-webkit-scrollbar-thumb:hover{ background:#909090 }
 
 a{ color:#EEE; font-size:16px;text-decoration: none;}
-
 #h1n {
 	font-weight:bold;
     color: #fff;
@@ -88,7 +89,7 @@ a{ color:#EEE; font-size:16px;text-decoration: none;}
 #header {
 	border-right:1px solid #33B5E5;
 	border-bottom:2px solid #33B5E5;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px 9px 0 0;
 }
 
 #divtit{
@@ -96,7 +97,9 @@ a{ color:#EEE; font-size:16px;text-decoration: none;}
 	border-bottom:2px solid #33B5E5;
 }
 #divqus{
+	line-height:26px;
 	margin:0px 20px 0px;
+	padding-left:1%;
 	min-height:100px;
 	background-color:rgba(99,99,99, .3);
 }
@@ -109,7 +112,11 @@ a{ color:#EEE; font-size:16px;text-decoration: none;}
 	margin-left:30px;
     background-color: #DDD;
     width: 70%;
-    border: 1px solid #33B5E5;
+    border-top: none;
+	border-left: none;
+	border-right:1px solid #33B5E5;
+	border-bottom:1px solid #33B5E5;
+    border-radius: 0px 5px 0 0;
 }
 
 #ctaner {

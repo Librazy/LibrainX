@@ -50,19 +50,23 @@
         })();
 	</script>
 </head>
-<body class="lay_wrap" id="body-content">
+<body >
+<div class="lay_wrap" id="body-content">
+<div id="primary">
 	<header id="header" class="formdiv">
-		<a href="http://im.librazy.org/article/179/librains-demo/" target="_blank"
-		rel="help" style="display: inline">
-			<h1 id="h1n">
-				LibrainX
-			</h1>
-		</a>
-		<a href="LibrainX.html" target="_self"
-		style="display: inline">←</a>
-		<h2 id="levtit">
-		关卡包生成器
-		</h2>
+		<div id="divtit">
+			<a href="http://im.librazy.org/article/179/librains-demo/" target="_blank"
+			rel="help" style="display: inline">
+				<h1 id="h1n">
+					LibrainX
+				</h1>
+			</a>
+			<a href="LibrainX.html" target="_self"
+			style="display: inline">←</a>
+			<h2 id="levtit">
+			关卡包生成器
+			</h2>
+		</div>
 	</header>
 	<div id="formlevpack" class="formdiv">
 		<span class="half halfl">关卡包名称<input type="text" id="iptlevpackname" value="" placeholder="关卡包名称" /></span>
@@ -90,7 +94,7 @@
 		<span class="all alll">数据C<input type="text" id="iptpencdatc" value="" placeholder="数据C" /></span><br />
 		<span class="all alll">数据D<input type="text" id="iptpencdatd" value="" placeholder="数据D" /></span><br />
 		<input type="hidden" id="genhash" value="" />
-		<input type="button" id="subqus" value="生成" /><br />
+		<input type="button" id="subqus" value="生成" /><span id="chkauto"><input type="checkbox" id="ifautonext" value="auto" />自动下一题</span>
 		<input type="button" id="subnextqus" value="下一题" /><br />
 	</div>
 	<div id="formgen" class="formdiv">
@@ -150,6 +154,7 @@
             CryptoJS.AES.encrypt(CryptoJS.SHA512(tmpshaf + CryptoJS.SHA512(tmpshaf)), $("#iptpprevpass").val()).toString().replace(/\s/, "")
            );
             $("#gjs").val($("#gjs").val()+"{\"pname\":\""+$("#iptpname").val()+"\",\"pdesc\":\""+$("#iptpdesc").val()+"\",\"ptype\":\""+$("#iptptype").val()+"\",\"pencdata\":\""+$("#iptpencdata").val()+"\",\"pencdatb\":\""+$("#iptpencdatb").val()+"\",\"pencdatc\":\""+$("#iptpencdatc").val()+"\",\"pencdatd\":\""+$("#iptpencdatd").val()+"\",\"penchash\":\""+$("#genhash").val()+"\",\"phint\":\""+$("#iptphint").val()+"\"}");
+			if ($("#ifautonext").attr("checked")) {$("#subnextqus").click();}
 		});
         $("#subnextqus").click(function () {
 			$("#iptlevpacktot").val(parseInt($("#iptlevpacktot").val())+1);
@@ -168,6 +173,15 @@
 		$("#sublevpacke").click(function () {
 			$("#gjs").val($("#gjs").val()+"]}");
 		});
+		$("#ifautonext").on("click",function () {
+			if ($("#ifautonext").attr("checked")) {
+				$("#subnextqus").css("display","none");
+			} else {
+				$("#subnextqus").css("display","inline-block");
+			}
+		});
     </script>
+</div>
+</div>
 </body>
 </html>

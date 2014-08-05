@@ -27,7 +27,7 @@ body {
 }
 
 .lay_wrap{ max-width:1200px; clear:both; }
-#body-content{ width:1200px; margin:0 auto; }
+#body-content{ width:1200px; margin:0 auto 30px; }
 #primary{  width:92%; margin-left:3%; padding-top:15px; }
 ::-webkit-scrollbar{ height:10px;width:10px; margin-right:2px }
 ::-webkit-scrollbar-track-piece{background-color:#F5F5F5;border-left:1px solid #D2D2D2;}

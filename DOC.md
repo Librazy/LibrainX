@@ -79,36 +79,20 @@
 
 ###文件结构
 
-levpack
-
--levpackname 关卡包名称
-
--levpackID 关卡包ID
-
--levpackpass 关卡包密码
-
--levpacktot 关卡数量
-
--levpackloaded =true
-
-
--problems 关卡信息
-
- |-pname 关卡名称
-
- |-pdesc 关卡介绍
-
- |-ptype-(enchtma,enchtmb,encimga,encimgb,hyba,hybb) 本关类型 加密htmlA 加密htmlB 加密图片A 加密图片B 混合A 混合B
-
- |-pencdata 加密数据A
-
- |-pencdatb 加密数据B
-
- |-pencdatc 加密数据C
-
- |-pencdatd 加密数据D
-
- |-penchash 加密的密码hash
-
- |-phint 本关提示
+		levpack
+		-levpackname 关卡包名称
+		-levpackID 关卡包ID
+		-levpackpass 关卡包密码
+		-levpacktot 关卡数量
+		-levpackloaded =true
+		-problems 关卡信息
+		 |-pname 关卡名称
+		 |-pdesc 关卡介绍
+		 |-ptype-(enchtma,enchtmb,encimga,encimgb,hyba,hybb) 本关类型 加密htmlA 加密htmlB 加密图片A 加密图片B 混合A 混合B
+		 |-pencdata 加密数据A
+		 |-pencdatb 加密数据B
+		 |-pencdatc 加密数据C
+		 |-pencdatd 加密数据D
+		 |-penchash 加密的密码hash
+		 |-phint 本关提示
  

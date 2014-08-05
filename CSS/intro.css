@@ -124,11 +124,6 @@ input.levpackipt{
 	border-bottom:2px solid #33B5E5;
 }
 
-
-
-
-
-
 @media (max-width: 1216px){
 	/* Simplify the basic layout */
 	#body-content{width:92% !important;}

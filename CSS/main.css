@@ -23,11 +23,11 @@ body {
 	font:16px/1.6333 "Microsoft YaHei","微软雅黑","Lucida Grande","文泉驿等宽微米黑","文泉驿微米黑","WenQuanYiMicroHei";
 	font-weight:400;
 	letter-spacing:.1px;
-	box-sizing: border-box; padding-left: 6px; padding-right: 6px;
+	box-sizing: border-box; 
 }
 
 .lay_wrap{ max-width:1200px; clear:both; }
-#body-content{ width:1200px; margin:0 auto 30px; }
+#body-content{ width:1200px; margin:0 auto 30px; margin: 0 auto 30px 59px;}
 #primary{  width:92%; margin-left:3%; padding-top:15px; }
 ::-webkit-scrollbar{ height:10px;width:10px; margin-right:2px }
 ::-webkit-scrollbar-track-piece{background-color:#F5F5F5;border-left:1px solid #D2D2D2;}
@@ -160,7 +160,7 @@ a{ color:#EEE; font-size:16px;text-decoration: none;}
 
 @media (max-width: 1216px){
 	/* Simplify the basic layout */
-	#body-content{width:92% !important;}
+	#body-content{width:92% !important;margin:0 auto 30px;}
 	#con img{max-width:80% !important;height:auto;}
 	#primary {
 		width: 92%;

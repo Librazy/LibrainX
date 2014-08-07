@@ -171,6 +171,7 @@
 			$("#gjs").val($("#gjs").val()+",");
         });
 		$("#sublevpacke").click(function () {
+			if ($("#ifautonext").attr("checked")){$("#ifautonext").removeAttr("checked");$("#subnextqus").css("display","inline-block");$("#subqus").click();}
 			$("#gjs").val($("#gjs").val()+"]}");
 		});
 		$("#ifautonext").on("click",function () {

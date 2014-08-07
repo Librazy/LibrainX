@@ -80,6 +80,8 @@ function hybb(levreq,tmpmd5){
 }
 function setproblem(levreq) {
 	//*XTODO*//
+	$("#divqusa").html("");
+	$("#divqusb").html("");
 	var p=levpack.problems;
 	var tmpmd5=CryptoJS.MD5(lastpass).toString();
 	$("#levcurrent").animate({

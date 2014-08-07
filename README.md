@@ -1,6 +1,6 @@
 LibrainX
 ========
-官方主页:<http://im.librazy.org//*XTODO*/>  
+官方主页:[LibrainX](http://im.librazy.org/article/1030/librainx/)   
 
 概述
 ----
@@ -22,7 +22,7 @@ LibrainX是由Librazy也就是我（目前）独立开发的的开源网页解�
 
 更多信息
 --------
-/*XTODO*/
+LibrainX的官方关卡包正在制作中，敬请期待
 
 ### 许可证 !important
 源代码:[LGPLv3](http://www.gnu.org/licenses/lgpl.html)  
@@ -31,7 +31,7 @@ LibrainX是由Librazy也就是我（目前）独立开发的的开源网页解�
 
 ### 技术细节
 
-预计支持平台:暂不支持IE6、7、8，IE9状况未明.其他主流浏览器较新版本均支持.
+预计支持平台:不支持IE6~8，IE11以下可能有未知的问题.其他主流浏览器较新版本均支持.
 
 主要使用的库:CryptoJS,jQuery,jQuery Migrate,jQuery Color Animations,PuterJam的base64转换工具.
 

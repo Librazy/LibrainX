@@ -127,6 +127,7 @@ function levpackpassed() {
 	}, 2500);
 }
 function loadfailed() {
+	$("#con").slideToggle(2000,function () {$("#subchkans").slideToggle(200);});
 	$("#levpacktit").animate({
 		backgroundColor: 'red',
 	}, 500);
@@ -178,6 +179,7 @@ function loadlevpack() {
 				lastpass=levpack.levpackpass;
 				setproblem(0);
 			}
+			$("#con").slideToggle(2000,function () {$("#subchkans").slideToggle(200);});
 		}
 	}catch(e){loadfailed();}
 }
@@ -215,7 +217,7 @@ $(document).ready(function () {
 	$("#levdesc").animate({
 		color: '#CCC',
 	}, 2100);
-	$("#con").slideToggle(2000,function () {$("#subchkans").slideToggle(200);});
+	
 	$("#levtit").animate({
 		color: '#AAA',
 	}, 600);
@@ -291,7 +293,7 @@ $("#sublevreq").click(function () {
             backgroundColor: 'red',
         }, 500);
         $("#divtools").animate({
-            backgroundColor: 'black',
+            backgroundColor: '#464646',
         }, 500);
     }
 });

@@ -80,7 +80,7 @@
 	
 
 
-###文件结构
+###JSON结构
 
 		levpack
 		-levpackname 关卡包名称

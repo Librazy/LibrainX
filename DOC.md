@@ -36,6 +36,8 @@
 
 **建议保存为UTF-8文件，确保文件只有一行**
 
+**目前需要手动改LibrainX.html里的参数从而在页面上显示关卡包**
+
 >如果制作本地关卡包，将文本框中所有代码粘贴至localLevpack.js中“var loclevpackstr='';”一行两个引号之间，并去掉“//loclevpack=true;”的注释（两个斜杠）
 
 

@@ -118,7 +118,7 @@ function levpackpassed() {
 	$("#levpacktit").animate({
 		backgroundColor: '#464646',
 	}, 3500);
-
+	$("#iptans").val("Congratulations!You passed level pack "+levpack.levpackname+"!")
 	$("#divqus").animate({
 		backgroundColor: '#46AA46',
 	}, 500);
@@ -160,7 +160,7 @@ function loadlevpack() {
 				/**/console.log("readingstate");/**/
 				currentlev = parseInt(levsaved.get("nlastlev"));
 				var tmplastpass = levsaved.get("nlastpass");
-				if (currentlev==levpack.levpacktot) {clearlev();window.location.href = window.location.href;}else{
+				if (currentlev>=levpack.levpacktot) {clearlev();window.location.href = window.location.href;}else{
 					if (test(tmplastpass, levsaved.get("nprevpass"), currentlev)) {
 						lastpass=tmplastpass
 						$("#iptans").val("");
@@ -232,11 +232,11 @@ $(document).ready(function () {
 });
 $("#subchkans").click(function () {
     /**/console.log("submited");/**/
-    var anssubed = $("#iptans").val().toString().trim().replace(".", "");
+    var anssubed = $("#iptans").val().toString().trim();
 	$.get("log.txt", { "levelnow": currentlev,"ans": anssubed, "levpack": levpack.levpackID});
     if (test(anssubed, lastpass, currentlev)) {
 		lastpass = anssubed;
-	    if (currentlev==levpack.levpacktot) {
+	    if (currentlev>=levpack.levpacktot) {
             $("#iptans").attr('disabled', "true");
             $("#subchkans").attr('disabled', "true");
 			//SET ROBLEM

@@ -109,6 +109,7 @@ a{ color:#EEE; font-size:16px;text-decoration: none;}
 	padding-left:1%;
 	min-height:100px;
 	background-color:rgba(99,99,99, .3);
+	word-wrap: break-word;
 }
 #con {
 	border-right:1px solid #33B5E5;
